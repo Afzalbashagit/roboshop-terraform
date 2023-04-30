@@ -13,7 +13,7 @@ data "aws_ami" "example" {
   owners           = ["973714476881"]
 }
 output "ami"{
-  value=data.aws_instance.centos.ami
+  value=data.aws_instance.Centos.image_id
 }
 output "frontend"{
  value=aws_instance.frontend.public_ip
