@@ -10,7 +10,7 @@ resource "aws_instance" "frontend" {
 
 resource "aws_route53_record" "frontend" {
   zone_id = "Z01635288KBXSY9TJV2R"
-  name    = "www.example.com"
+  name    = "frontend-dev.afzalbasha.cloud"
   type    = "A"
   ttl     = 30
   records = [aws_instance.frontend.private_ip]
@@ -35,7 +35,7 @@ resource "aws_instance" "mongodb" {
 }
 resource "aws_route53_record" "mongodb" {
   zone_id = "Z01635288KBXSY9TJV2R"
-  name    = "www.example.com"
+  name    = "mongodb-dev.afzalbasha.cloud"
   type    = "A"
   ttl     = 30
   records = [aws_instance.mongodb.private_ip]
@@ -53,7 +53,7 @@ resource "aws_instance" "catalogue" {
 
 resource "aws_route53_record" "catalogue" {
   zone_id = "Z01635288KBXSY9TJV2R"
-  name    = "www.example.com"
+  name    = "catalogue.afzalbasha.cloud"
   type    = "A"
   ttl     = 30
   records = [aws_instance.catalogue.private_ip]
@@ -70,7 +70,7 @@ resource "aws_instance" "redis" {
 }
 resource "aws_route53_record" "redis" {
   zone_id = "Z01635288KBXSY9TJV2R"
-  name    = "www.example.com"
+  name    = "redis-dev.afzalbasha.cloud"
   type    = "A"
   ttl     = 30
   records = [aws_instance.redis.private_ip]
@@ -87,7 +87,7 @@ resource "aws_instance" "user" {
 }
 resource "aws_route53_record" "user" {
   zone_id = "Z01635288KBXSY9TJV2R"
-  name    = "www.example.com"
+  name    = "user-dev.afzalbasha.cloud"
   type    = "A"
   ttl     = 30
   records = [aws_instance.user.private_ip]
@@ -104,7 +104,7 @@ resource "aws_instance" "cart" {
 }
 resource "aws_route53_record" "cart" {
   zone_id = "Z01635288KBXSY9TJV2R"
-  name    = "www.example.com"
+  name    = "cart-dev.afzalbasha.cloud"
   type    = "A"
   ttl     = 30
   records = [aws_instance.cart.private_ip]
@@ -121,7 +121,7 @@ resource "aws_instance" "mysql" {
 }
 resource "aws_route53_record" "mysql" {
   zone_id = "Z01635288KBXSY9TJV2R"
-  name    = "www.example.com"
+  name    = "mysql-dev.afzalbasha.cloud"
   type    = "A"
   ttl     = 30
   records = [aws_instance.mysql.private_ip]
@@ -138,7 +138,7 @@ resource "aws_instance" "shipping" {
 }
 resource "aws_route53_record" "shipping" {
   zone_id = "Z01635288KBXSY9TJV2R"
-  name    = "www.example.com"
+  name    = "shipping-dev.afzalbasha.cloud"
   type    = "A"
   ttl     = 30
   records = [aws_instance.shipping.private_ip]
@@ -155,7 +155,7 @@ resource "aws_instance" "rabbitmq" {
 }
 resource "aws_route53_record" "rabbitmq" {
   zone_id = "Z01635288KBXSY9TJV2R"
-  name    = "www.example.com"
+  name    = "rabbitmq-dev.afzalbasha.cloud"
   type    = "A"
   ttl     = 30
   records = [aws_instance.rabbitmq.private_ip]
@@ -171,7 +171,7 @@ resource "aws_instance" "payment" {
 }
 resource "aws_route53_record" "payment" {
   zone_id = "Z01635288KBXSY9TJV2R"
-  name    = "www.example.com"
+  name    = "payment-dev.afzalbasha.cloud"
   type    = "A"
   ttl     = 30
   records = [aws_instance.payment.private_ip]
