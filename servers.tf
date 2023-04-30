@@ -7,7 +7,14 @@ resource "aws_instance" "frontend" {
     Name = "frontend"
   }
 }
-
+data "aws_ami" "example" {
+  most_recent      = true
+  name_regex       = "Centos-8-DevOps-Practice"
+  owners           = ["973714476881"]
+}
+output "ami"{
+  value=data.aws_instance.centos.ami
+}
 output "frontend"{
  value=aws_instance.frontend.public_ip
 }
