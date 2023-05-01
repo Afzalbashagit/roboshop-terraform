@@ -144,7 +144,6 @@ resource "aws_route53_record" "shipping" {
   records = [aws_instance.shipping.private_ip]
 }
 
-
 resource "aws_instance" "rabbitmq" {
   ami           = data.aws_ami.centos.image_id
   instance_type = "t3.micro"
