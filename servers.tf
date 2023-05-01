@@ -150,9 +150,7 @@ resource "aws_route53_record" "shipping" {
   ttl     = 30
   records = [aws_instance.shipping.private_ip]
 }
-data "aws_security_group" "allow-all" {
-  name="allow-all"
-}
+
 resource "aws_instance" "rabbitmq" {
   ami           = data.aws_ami.centos.image_id
   instance_type = var.instance_type
