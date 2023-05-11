@@ -15,7 +15,7 @@ variable "instance_type"{
 }
 
 resource "null_resource" "provisioner"{
-
+  depends_on = [aws_instance,aws_route53_record]
   for_each=var.components
   provisioner "remote-exec"{
     connection{
