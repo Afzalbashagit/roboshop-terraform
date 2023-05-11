@@ -14,6 +14,27 @@ variable "instance_type"{
   default="t3.small"
 }
 
+resource "null_resource" "provisioner"{
+
+  for_each=var.components
+  provisioner "remote-exec"{
+    connection{
+      type="ssh"
+      user="centos"
+      password="DevOps321"
+      host=self.private_ip
+    }
+    inline=[
+    "rm -rf roboshop-shell",
+    "git clone https://github.com/Afzalbashagit/roboshop-terraform.git",
+    "cd roboshop-shell",
+    "sudo bash ${each.value["name"]}.sh ${each.value["password"]}"
+    ]
+  }
+}
+
+
+
 resource "aws_route53_record" "records" {
   for_each = var.components
   zone_id = "Z01635288KBXSY9TJV2R"
