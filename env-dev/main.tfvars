@@ -1,4 +1,3 @@
-
 components={
   frontend={
     name="frontend"
