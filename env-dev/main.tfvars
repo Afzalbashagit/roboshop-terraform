@@ -45,4 +45,3 @@ components={
   }
 }
 env="dev"
-variable "components"{}

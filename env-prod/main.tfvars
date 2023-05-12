@@ -41,4 +41,3 @@ components={
   }
 }
 env="prod"
-variable "components"{}
