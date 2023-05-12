@@ -28,7 +28,7 @@ resource "null_resource" "provisioner"{
     "rm -rf roboshop-shell",
     "git clone https://github.com/Afzalbashagit/roboshop-terraform.git",
     "cd roboshop-shell",
-    "sudo bash ${each.value["name"]}.sh ${each.value["password"]}"
+    "sudo bash ${each.value["name"]}.sh ${lookup(each.value,"password","null")}"
     ]
   }
 }
