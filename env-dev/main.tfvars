@@ -26,7 +26,7 @@ app_servers={
 
   payment={
     name="payment"
-    instance_type="t3.micro"
+    instance_type="t3.small"
     password="roboshop123"
   }
 }
@@ -47,7 +47,7 @@ database_servers={
   }
   rabbitmq={
     name="rabbitmq"
-    instance_type="t3.micro"
+    instance_type="t3.small"
     password="roboshop123"
   }
 
