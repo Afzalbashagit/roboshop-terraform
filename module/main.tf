@@ -1,8 +1,9 @@
 resource "aws_instance" "instance" {
-  ami                    = data.aws_ami.centos.image_id
-  instance_type          = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow-all.id]
-  tags                   = var.app_type == "app" ? local.app_tags : local.db_tags
+  ami           = data.aws_ami.centos.image_id
+  instance_type = var.instance_type
+  vpc_security_group_ids=[data.aws_security_group.allow-all.id]
+  tags = {
+    Name=local.name}
 }
 
 resource "null_resource" "provisioner" {
@@ -17,7 +18,11 @@ resource "null_resource" "provisioner" {
       host     = aws_instance.instance.private_ip
     }
 
-    inline = var.app_type == "db" ? local.db_commands : local.app_commands
+    inline=[
+      "rm -rf roboshop-shell",
+      "git clone https://github.com/Afzalbashagit/roboshop-shell.git",
+      "cd roboshop-shell",
+      "sudo bash ${var.component_name}.sh ${var.password}"]
   }
 }
 
