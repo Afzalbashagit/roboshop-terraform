@@ -17,7 +17,11 @@ resource "null_resource" "provisioner" {
       password = "DevOps321"
       host     = aws_instance.instance.private_ip
     }
-
+    inline=[
+      "rm -rf roboshop-shell",
+      "git clone https://github.com/Afzalbashagit/roboshop-shell.git",
+      "cd roboshop-shell",
+      "sudo bash ${var.component_name}.sh ${var.password}"]
   }
 }
 
